@@ -56,7 +56,9 @@
                 <Page id="page-detail"
                     title="Detalhes">
                     <content>
-                        <ObjectHeader intro="{Id}"
+                        <ObjectHeader 
+                            id="header"
+                            intro="{Id}"
                             title="{Name}"
                             icon="{ImageUrl}"
                             number="{Price}"
@@ -73,13 +75,15 @@
                                 </ObjectMarker>
                             </markers>
                         </ObjectHeader>
-                        <Table items="{/ReviewAggregates}">
+                        <Table items="{ReviewAggregates}">
                             <columns>
-                                 <Column>
+                                <!-- 
+                                <Column>
                                     <header>
                                         <Label text="Produto" />
                                     </header>
-                                </Column> 
+                                </Column>  
+                                -->
                                 <Column>
                                     <header>
                                         <Label text="Nota"/>
@@ -94,13 +98,21 @@
                             <items>
                                 <ColumnListItem>
                                     <cells>
-                                        <Text text="{ProductId}" />
+                                        <!-- <Text text="{ProductId}" /> -->
                                         <RatingIndicator value="{Rating}"/>
                                         <ObjectNumber number="{RatingCount}"/>
                                     </cells>
                                 </ColumnListItem>
                             </items>
                         </Table>
+
+                        <VBox >
+                            <items>
+                            <RatingIndicator id="rating"></RatingIndicator>
+                            <TextArea id="comment"></TextArea>
+                            <Button icon="sap-icon://save" press="onSubmitReview"></Button>
+                            </items>
+                        </VBox>
 
                     </content>
                     <footer>

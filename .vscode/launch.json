@@ -61,6 +61,29 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/t56_sapui5/odata_write\"}"
       }
+    },
+    {
+      "name": "ui5-odata-write",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/ovlyui5/ui5-odata-write\"}"
+      },
+      "args": [
+        "--backendConfig",
+        "[{\"path\":\"/sap\",\"destination\":\"ovly_public\"}]"
+      ]
     }
   ],
   "inputs": [
